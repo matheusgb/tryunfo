@@ -1,0 +1,260 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.titulo {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+}
+
+.titulo:last-child {
+  margin-top: -7px;
+}
+
+.superclube {
+  border: solid black 4px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+}
+
+.meio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+  min-width: 674.9px;
+  height: 525px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 25px;
+}
+
+.card {
+  width: 50%;
+  min-width: 674.9px;
+  max-height: 634.5px;
+}
+
+.blur {
+  background-image: url("/src/images/vasco.png");
+  height: 634.5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.carta {
+  width: 300px;
+  height: 440px;
+  background-color: white;
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.subcarta {
+  width: 270px;
+  height: 410px;
+  background-color: lightgrey;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid black 2px;
+  text-align: center;
+}
+
+.cardname {
+  background-color: black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 270px;
+  height: 25px;
+  color: white;
+}
+
+.imgcontainer {
+  width: 265.5px;
+  height: 215px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+}
+
+.imgspace {
+  width: 210px;
+  height: 210px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.image {
+  height: 210px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.image[src=""] {
+  display: none;
+}
+
+.description {
+  margin-top: 6px;
+  word-wrap: break-word;
+  width: 265.5px;
+  height: 45px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.form2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 400px;
+}
+
+label {
+  margin-top: 3px;
+}
+
+.input {
+  width: 100%;
+}
+
+.inputn {
+  width: 100%;
+}
+
+.submit {
+  margin-top: 3px;
+}
+
+.inputs {
+  margin-top: -15px;
+  height: 35px;
+  background-color: lightgrey;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 5px;
+}
+
+.inpute {
+  margin-right: 13px;
+}
+
+.savedcards {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #161010;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.savedcards div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 15px;
+}
+
+.savedcards div button {
+  width: 200px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+/*# sourceMappingURL=app.css.map */
