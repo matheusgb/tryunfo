@@ -132,8 +132,8 @@
 }
 
 .imgcontainer {
-  width: 265.5px;
-  height: 215px;
+  min-width: 265.5px;
+  min-height: 215px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -159,6 +159,12 @@
 
 .image {
   height: 210px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   -o-object-fit: cover;
      object-fit: cover;
   text-indent: 100%;
@@ -174,7 +180,8 @@
   margin-top: 6px;
   word-wrap: break-word;
   width: 265.5px;
-  height: 45px;
+  min-height: 45px;
+  max-height: 45px;
   overflow: hidden;
   background-color: white;
 }
@@ -238,6 +245,18 @@ label {
   background-color: #161010;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+
+.savedcards .subcarta {
+  padding-bottom: 25px;
+  height: 415px;
+}
+
+.savedcards .description {
+  margin-top: -10px;
 }
 
 .savedcards div {

@@ -119,7 +119,7 @@ class App extends React.Component {
   }
 
   remove(e) {
-    const test = e.target.parentNode.firstChild.lastChild.className === 'truf';
+    const test = e.target.parentNode.firstChild.firstChild.lastChild.className === 'truf';
     if (test === true) {
       this.setState({
         hasTrunfo: false,
