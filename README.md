@@ -1,1 +1,1 @@
-wip
+repositório e projeto em construção
