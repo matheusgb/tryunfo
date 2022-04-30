@@ -119,13 +119,14 @@ class App extends React.Component {
   }
 
   remove(e) {
-    const test = e.target.parentNode.firstChild.firstChild.lastChild.className === 'truf';
-    if (test === true) {
-      this.setState({
-        hasTrunfo: false,
-      });
+    const { savedCards } = this.state;
+
+    if (e.target.parentNode.firstChild.firstChild.lastChild.className === 'truf') {
+      this.setState({ hasTrunfo: false });
     }
-    e.target.parentNode.remove();
+
+    this.setState({ savedCards: savedCards
+      .filter((_, i) => i !== +e.currentTarget.className) });
   }
 
   render() {
@@ -195,7 +196,7 @@ class App extends React.Component {
             .filter((el) => (inputTrunfo === false ? el : el.cardTrunfo === true))
             .filter((el) => (inputRaro === '' ? el : el.cardRare === inputRaro))
             .filter((el) => el.cardName.includes(inputName))
-            .map((el) => (
+            .map((el, index) => (
               <div key={ el.cardName }>
                 <Card
                   key={ el.cardName }
@@ -213,6 +214,7 @@ class App extends React.Component {
 
                 <button
                   type="button"
+                  className={ index }
                   onClick={ this.remove }
                   data-testid="delete-button"
                 >
