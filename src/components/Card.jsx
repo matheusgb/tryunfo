@@ -29,21 +29,30 @@ class Card extends React.Component {
             </div>
           </div>
           <p className="description" data-testid="description-card">{cardDescription}</p>
-          <p data-testid="attr1-card">
-            Ataque:
-            {' '}
-            {cardAttr1}
-          </p>
-          <p data-testid="attr2-card">
-            Meio de campo:
-            {' '}
-            {cardAttr2}
-          </p>
-          <p data-testid="attr3-card">
-            Defesa:
-            {' '}
-            {cardAttr3}
-          </p>
+          {cardAttr1 !== ''
+          && (
+            <p data-testid="attr1-card">
+              Ataque:
+              {' '}
+              {cardAttr1}
+            </p>)}
+
+          {cardAttr2 !== ''
+          && (
+            <p data-testid="attr2-card">
+              Meio de Campo:
+              {' '}
+              {cardAttr2}
+            </p>)}
+
+          {cardAttr3 !== ''
+          && (
+            <p data-testid="attr3-card">
+              Defesa:
+              {' '}
+              {cardAttr3}
+            </p>)}
+
           <p data-testid="rare-card">{cardRare}</p>
 
           {cardTrunfo === true

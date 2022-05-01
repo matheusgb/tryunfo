@@ -213,6 +213,11 @@ label {
   margin-top: 3px;
 }
 
+.points {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
 .inputs {
   margin-top: -15px;
   height: 35px;

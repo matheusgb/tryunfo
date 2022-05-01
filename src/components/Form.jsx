@@ -16,10 +16,11 @@ class Form extends React.Component {
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
+      total,
     } = this.props;
 
     return (
-      <div className="form2">
+      <form id="reset" className="form2">
         <label htmlFor="nome da carta">
           Nome:
 
@@ -58,7 +59,6 @@ class Form extends React.Component {
             id="primeiro atributo"
             className="inputn"
             value={ cardAttr1 }
-            defaultValue="0"
             max="90"
             min="0"
             onChange={ onInputChange }
@@ -74,7 +74,6 @@ class Form extends React.Component {
             id="segundo atributo"
             className="inputn"
             value={ cardAttr2 }
-            defaultValue="0"
             max="90"
             min="0"
             onChange={ onInputChange }
@@ -90,12 +89,17 @@ class Form extends React.Component {
             id="terceiro atributo"
             className="inputn"
             value={ cardAttr3 }
-            defaultValue="0"
             max="90"
             min="0"
             onChange={ onInputChange }
           />
         </label>
+
+        <p className="points">
+          Pontos restantes:
+          {' '}
+          {total}
+        </p>
 
         <label htmlFor="imagem">
           URL do escudo do clube:
@@ -159,7 +163,7 @@ class Form extends React.Component {
         >
           Salvar
         </button>
-      </div>
+      </form>
     );
   }
 }

@@ -11,9 +11,9 @@ class App extends React.Component {
     this.state = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: '0',
-      cardAttr2: '0',
-      cardAttr3: '0',
+      cardAttr1: '',
+      cardAttr2: '',
+      cardAttr3: '',
       cardImage: '',
       cardRare: '',
       cardTrunfo: false,
@@ -23,6 +23,7 @@ class App extends React.Component {
       inputName: '',
       inputRaro: '',
       inputTrunfo: false,
+      total: 210,
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.validar = this.validar.bind(this);
@@ -36,7 +37,7 @@ class App extends React.Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
     this.setState({
-      [name]: value,
+      [name]: value.replace(/^0+/, ''),
     }, () => this.validar());
   }
 
@@ -84,6 +85,10 @@ class App extends React.Component {
       cardTrunfo: false,
     }));
 
+    document.getElementById('reset').reset();
+
+    this.setState({ total: 210 });
+
     if (cardTrunfo === true) { this.setState({ hasTrunfo: true }); }
   }
 
@@ -110,12 +115,16 @@ class App extends React.Component {
     const sum = parseInt(cardAttr1, 10)
     + parseInt(cardAttr2, 10) + parseInt(cardAttr3, 10) <= sumAll;
 
+    const sum2 = +cardAttr1 + +cardAttr2 + +cardAttr3;
+
     const valid = emptyFields && att1 && att2 && att3 && sum;
     if (valid === true) {
       this.setState({ isSaveButtonDisabled: false });
     } else {
       this.setState({ isSaveButtonDisabled: true });
     }
+
+    this.setState({ total: sumAll - sum2 });
   }
 
   remove(e) {
@@ -145,6 +154,7 @@ class App extends React.Component {
       inputName,
       inputRaro,
       inputTrunfo,
+      total,
     } = this.state;
 
     const tar = ({ target }) => target.name;
@@ -165,6 +175,7 @@ class App extends React.Component {
                 onSaveButtonClick={ this.onSaveButtonClick }
                 onInputChange={ this.onInputChange }
                 hasTrunfo={ hasTrunfo }
+                total={ total }
               />
             </div>
           </div>
