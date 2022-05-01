@@ -171,7 +171,7 @@ class Form extends React.Component {
         </label>
 
         {
-          hasTrunfo === true ? (<p>Você já tem um Super Trunfo em seu baralho</p>)
+          hasTrunfo === true ? (<p>Você já tem um Super Clube em seu baralho!</p>)
             : (
               <label htmlFor="trynfo">
                 Super clube?
