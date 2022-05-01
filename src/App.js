@@ -37,7 +37,7 @@ class App extends React.Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
     this.setState({
-      [name]: value.replace(/^0+/, ''),
+      [name]: value,
     }, () => this.validar());
   }
 
