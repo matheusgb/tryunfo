@@ -8,8 +8,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      cardName: '',
+    this.state = { cardName: '',
       cardDescription: '',
       cardAttr1: '',
       cardAttr2: '',
@@ -38,7 +37,9 @@ class App extends React.Component {
 
     this.setState({
       [name]: value,
-    }, () => this.validar());
+    }, () => {
+      this.validar();
+    });
   }
 
   onInputChange2({ target }) {
@@ -51,19 +52,10 @@ class App extends React.Component {
   }
 
   onSaveButtonClick() {
-    const {
-      cardName,
-      cardDescription,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3,
-      cardImage,
-      cardRare,
-      cardTrunfo,
-    } = this.state;
+    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage,
+      cardRare, cardTrunfo } = this.state;
 
-    const data = {
-      cardName,
+    const data = { cardName,
       cardDescription,
       cardAttr1,
       cardAttr2,
@@ -93,15 +85,8 @@ class App extends React.Component {
   }
 
   validar() {
-    const {
-      cardName,
-      cardDescription,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3,
-      cardImage,
-      cardRare,
-    } = this.state;
+    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage,
+      cardRare } = this.state;
 
     const max = 90;
     const sumAll = 210;
@@ -139,23 +124,9 @@ class App extends React.Component {
   }
 
   render() {
-    const {
-      cardName,
-      cardDescription,
-      cardAttr1,
-      cardAttr2,
-      cardAttr3,
-      cardImage,
-      cardRare,
-      cardTrunfo,
-      hasTrunfo,
-      isSaveButtonDisabled,
-      savedCards,
-      inputName,
-      inputRaro,
-      inputTrunfo,
-      total,
-    } = this.state;
+    const { cardName, cardDescription, cardAttr1, cardAttr2, cardAttr3, cardImage,
+      cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled, savedCards, inputName,
+      inputRaro, inputTrunfo, total } = this.state;
 
     const tar = ({ target }) => target.name;
 

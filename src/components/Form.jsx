@@ -2,36 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Form extends React.Component {
-  firstAttr = (e) => {
+  inputsMax = ({ target }) => {
     const MAX_NUMBER = 90;
-    if (e.target.value > MAX_NUMBER) {
-      document.getElementById('primeiro-atributo').value = 90;
+    if (target.className === 'inputn' && target.value > MAX_NUMBER) {
+      document.getElementById(`${target.id}`).value = 90;
+      this.setState({
+        [target.name]: 90,
+      });
     }
 
-    if (e.target.value <= 0 && e.target.value !== '') {
-      document.getElementById('primeiro-atributo').value = 1;
-    }
-  }
-
-   secondAttr = (e) => {
-     const MAX_NUMBER = 90;
-     if (e.target.value > MAX_NUMBER) {
-       document.getElementById('segundo-atributo').value = 90;
-     }
-
-     if (e.target.value <= 0 && e.target.value !== '') {
-       document.getElementById('segundo-atributo').value = 1;
-     }
-   };
-
-  thirdAttr = (e) => {
-    const MAX_NUMBER = 90;
-    if (e.target.value > MAX_NUMBER) {
-      document.getElementById('terceiro-atributo').value = 90;
-    }
-
-    if (e.target.value <= 0 && e.target.value !== '') {
-      document.getElementById('terceiro-atributo').value = 1;
+    if (target.className === 'inputn' && target.value <= 0 && target.value !== '') {
+      document.getElementById(`${target.id}`).value = 1;
+      this.setState({
+        [target.name]: 1,
+      });
     }
   };
 
@@ -64,7 +48,7 @@ class Form extends React.Component {
             id="nome da carta"
             value={ cardName }
             className="input"
-            onChange={ onInputChange }
+            onInput={ onInputChange }
           />
         </label>
 
@@ -79,7 +63,7 @@ class Form extends React.Component {
             id="descrição da carta"
             className="input"
             value={ cardDescription }
-            onChange={ onInputChange }
+            onInput={ onInputChange }
           />
         </label>
 
@@ -93,9 +77,9 @@ class Form extends React.Component {
             className="inputn"
             value={ cardAttr1 }
             max="90"
+            maxLength="2"
             min="0"
-            onChange={ onInputChange }
-            onInput={ this.firstAttr }
+            onInput={ (e) => { this.inputsMax(e); onInputChange(e); } }
           />
         </label>
 
@@ -109,9 +93,9 @@ class Form extends React.Component {
             className="inputn"
             value={ cardAttr2 }
             max="90"
+            maxLength="2"
             min="0"
-            onChange={ onInputChange }
-            onInput={ this.secondAttr }
+            onInput={ (e) => { this.inputsMax(e); onInputChange(e); } }
           />
         </label>
 
@@ -125,9 +109,9 @@ class Form extends React.Component {
             className="inputn"
             value={ cardAttr3 }
             max="90"
+            maxLength="2"
             min="0"
-            onChange={ onInputChange }
-            onInput={ this.thirdAttr }
+            onInput={ (e) => { this.inputsMax(e); onInputChange(e); } }
           />
         </label>
 
@@ -147,7 +131,7 @@ class Form extends React.Component {
             data-testid="image-input"
             id="imagem"
             value={ cardImage }
-            onChange={ onInputChange }
+            onInput={ onInputChange }
           />
         </label>
 
@@ -160,7 +144,7 @@ class Form extends React.Component {
             name="cardRare"
             className="inputr"
             value={ cardRare }
-            onChange={ onInputChange }
+            onInput={ onInputChange }
             defaultValue="DEFAULT"
           >
             <option value="DEFAULT" disabled>Selecione sua divisão</option>
@@ -183,7 +167,7 @@ class Form extends React.Component {
                   id="trynfo"
                   name="cardTrunfo"
                   checked={ cardTrunfo }
-                  onChange={ onInputChange }
+                  onInput={ onInputChange }
                 />
               </label>
             )
