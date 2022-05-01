@@ -206,7 +206,7 @@ class App extends React.Component {
           {savedCards
             .filter((el) => (inputTrunfo === false ? el : el.cardTrunfo === true))
             .filter((el) => (inputRaro === '' ? el : el.cardRare === inputRaro))
-            .filter((el) => el.cardName.includes(inputName))
+            .filter((el) => el.cardName.toLowerCase().includes(inputName.toLowerCase()))
             .map((el, index) => (
               <div key={ el.cardName }>
                 <Card
