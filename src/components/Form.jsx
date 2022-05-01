@@ -2,6 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Form extends React.Component {
+  firstAttr = (e) => {
+    const MAX_NUMBER = 90;
+    if (e.target.value > MAX_NUMBER) {
+      document.getElementById('primeiro-atributo').value = 90;
+    }
+
+    if (e.target.value <= 0 && e.target.value !== '') {
+      document.getElementById('primeiro-atributo').value = 1;
+    }
+  }
+
+   secondAttr = (e) => {
+     const MAX_NUMBER = 90;
+     if (e.target.value > MAX_NUMBER) {
+       document.getElementById('segundo-atributo').value = 90;
+     }
+
+     if (e.target.value <= 0 && e.target.value !== '') {
+       document.getElementById('segundo-atributo').value = 1;
+     }
+   };
+
+  thirdAttr = (e) => {
+    const MAX_NUMBER = 90;
+    if (e.target.value > MAX_NUMBER) {
+      document.getElementById('terceiro-atributo').value = 90;
+    }
+
+    if (e.target.value <= 0 && e.target.value !== '') {
+      document.getElementById('terceiro-atributo').value = 1;
+    }
+  };
+
   render() {
     const {
       cardName,
@@ -50,48 +83,51 @@ class Form extends React.Component {
           />
         </label>
 
-        <label htmlFor="primeiro atributo">
+        <label htmlFor="primeiro-atributo">
           Ataque:
           <input
             type="number"
             name="cardAttr1"
             data-testid="attr1-input"
-            id="primeiro atributo"
+            id="primeiro-atributo"
             className="inputn"
             value={ cardAttr1 }
             max="90"
             min="0"
             onChange={ onInputChange }
+            onInput={ this.firstAttr }
           />
         </label>
 
-        <label htmlFor="segundo atributo">
+        <label htmlFor="segundo-atributo">
           Meio de campo:
           <input
             type="number"
             name="cardAttr2"
             data-testid="attr2-input"
-            id="segundo atributo"
+            id="segundo-atributo"
             className="inputn"
             value={ cardAttr2 }
             max="90"
             min="0"
             onChange={ onInputChange }
+            onInput={ this.secondAttr }
           />
         </label>
 
-        <label htmlFor="terceiro atributo">
+        <label htmlFor="terceiro-atributo">
           Defesa:
           <input
             type="number"
             name="cardAttr3"
             data-testid="attr3-input"
-            id="terceiro atributo"
+            id="terceiro-atributo"
             className="inputn"
             value={ cardAttr3 }
             max="90"
             min="0"
             onChange={ onInputChange }
+            onInput={ this.thirdAttr }
           />
         </label>
 
