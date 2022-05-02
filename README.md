@@ -1,6 +1,6 @@
 ![Tryunfo (Super Clube)](src/images/vasco.gif)
 
-# Tryunfo (Super Clube)
+# Tryunfo (Super Clube v0.1)
 
 Projeto feito enquanto estudava na [Trybe](https://www.betrybe.com/), utilizando React, Class Components, Javascript e SaSS no módulo de front-end. Entregue com 100% dos requisitos.
 
