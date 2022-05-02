@@ -66,6 +66,7 @@ class Form extends React.Component {
             value={ cardName }
             className="input"
             onInput={ onInputChange }
+            maxLength={ 25 }
           />
         </label>
 
@@ -81,6 +82,7 @@ class Form extends React.Component {
             className="input"
             value={ cardDescription }
             onInput={ onInputChange }
+            maxLength={ 64 }
           />
         </label>
 
