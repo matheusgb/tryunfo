@@ -17,7 +17,24 @@ class Form extends React.Component {
         [target.name]: 1,
       });
     }
+    this.inputsCorrection(target);
   };
+
+  inputsCorrection = (target) => {
+    const value = 210;
+    const primeiro = document.getElementById('primeiro-atributo').value;
+    const segundo = document.getElementById('segundo-atributo').value;
+    const terceiro = document.getElementById('terceiro-atributo').value;
+
+    const soma = +primeiro + +segundo + +terceiro;
+
+    const restante = value - soma;
+
+    if (target.className === 'inputn' && restante < 0 && target.value !== '') {
+      document.getElementById(`${target.id}`).value = +document
+        .getElementById(`${target.id}`).value + +restante;
+    }
+  }
 
   render() {
     const {
