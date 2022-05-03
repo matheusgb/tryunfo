@@ -4,18 +4,18 @@ import PropTypes from 'prop-types';
 class Form extends React.Component {
   inputsMax = ({ target }) => {
     const MAX_NUMBER = 90;
+    parseFloat(target.value).toFixed();
+
+    if ((target.className === 'inputn' && target.value.includes('.'))) {
+      document.getElementById(`${target.id}`).value = 1;
+    }
+
     if (target.className === 'inputn' && target.value > MAX_NUMBER) {
       document.getElementById(`${target.id}`).value = 90;
-      this.setState({
-        [target.name]: 90,
-      });
     }
 
     if (target.className === 'inputn' && target.value <= 0 && target.value !== '') {
       document.getElementById(`${target.id}`).value = 1;
-      this.setState({
-        [target.name]: 1,
-      });
     }
     this.inputsCorrection(target);
   };
@@ -129,6 +129,7 @@ class Form extends React.Component {
             value={ cardAttr3 }
             max="90"
             maxLength="2"
+            pattern="\d*"
             min="0"
             onInput={ (e) => { this.inputsMax(e); onInputChange(e); } }
           />
