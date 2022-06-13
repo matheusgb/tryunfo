@@ -12,8 +12,6 @@ Ao utilizar essa aplicação uma pessoa usuária é capaz de:
 
 - Visualizar todas as cartas que foram adicionadas ao baralho;
 
-- Jogar com o baralho criado.
-
 ## Direitos autorais
 
 Esse projeto foi desenvolvido por mim ([Matheus Gomes](https://www.linkedin.com/in/matheusgb/)) apenas visando o aprendizado.
